@@ -1,0 +1,11 @@
+.navbar {
+    grid-area: n;
+    background-color: bisque;
+}
+
+
+
+.item a {
+    color: rgb(67, 29, 29);
+    text-decoration: none;
+}
