@@ -10,8 +10,10 @@ export const MyPosts = () => {
                 <input type="text" placeholder={"post"}/>
                 <button>Add post</button>
             </div>
-            <Post/>
-            <Post/>
+            <Post post={"Post-1"}
+                  likes={20}/>
+            <Post post={"Post-2"}
+                  likes={40}/>
         </div>
     );
 }
