@@ -4,7 +4,7 @@ import {Header} from "./components/header/Header";
 import {Navbar} from "./components/navbar/Navbar";
 import {Profile} from "./components/profile/Profile";
 import {Dialogs} from "./components/dialogs/Dialogs";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {Messages} from "./components/navbar/messages/Messages";
 import {News} from "./components/navbar/news/News";
 import {Music} from "./components/navbar/music/Music";
@@ -19,7 +19,6 @@ type Props = {
 export const App = (props: Props) => {
 
     return (
-        <BrowserRouter>
             <div className="App-Wrapper">
                 <Header/>
                 <Navbar/>
@@ -37,6 +36,5 @@ export const App = (props: Props) => {
                 </div>
 
             </div>
-        </BrowserRouter>
     );
 }
