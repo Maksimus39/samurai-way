@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './MyPosts.module.css';
 import {Post} from "./post/Post";
-import {PostType} from "../../../index";
+import {RootState} from "../../../redux/State";
+
 
 type Props = {
-    postArray: PostType[]
+    state: RootState
 }
 
-export const MyPosts = (props:Props) => {
-    const PostElement = props.postArray.map(el => {
+export const MyPosts = (props: Props) => {
+    const PostElement = props.state.profilePage.postArray.map(el => {
         return <div key={el.id}><Post post={el.post} likes={el.likes}/></div>
     })
 

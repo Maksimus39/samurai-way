@@ -9,13 +9,11 @@ import {Messages} from "./components/navbar/messages/Messages";
 import {News} from "./components/navbar/news/News";
 import {Music} from "./components/navbar/music/Music";
 import {Settings} from "./components/navbar/settings/Settings";
-import {DialogItemArrayType, MessageArrayType, PostType} from "./index";
+import {RootState} from "./redux/State";
 
 
 type Props = {
-    postArray: PostType[]
-    dialogItemArray: DialogItemArrayType[]
-    messageArray: MessageArrayType[]
+    state: RootState
 }
 
 export const App = (props: Props) => {
@@ -28,9 +26,9 @@ export const App = (props: Props) => {
 
 
                 <div className={"App-Wrapper-content"}>
-                    <Route path="/profile" render={() => <Profile postArray={props.postArray}/>}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogItemArray={props.dialogItemArray}
-                                                                  messageArray={props.messageArray}/>}/>
+                    <Route path="/profile" render={() => <Profile state={props.state}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs state={props.state}/>}/>
+
 
                     <Route path="/messages" component={Messages}/>
                     <Route path="/news" component={News}/>
@@ -40,6 +38,5 @@ export const App = (props: Props) => {
 
             </div>
         </BrowserRouter>
-
     );
 }

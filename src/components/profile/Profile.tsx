@@ -1,17 +1,17 @@
 import styles from "./Profile.module.css"
 import {MyPosts} from "./myPosts/MyPosts";
 import {ProfileInfo} from "./profileInfo/ProfileInfo";
-import {PostType} from "../../index";
+import {RootState} from "../../redux/State";
 
 
 type Props = {
-    postArray: PostType[]
+    state: RootState
 }
 export const Profile = (props: Props) => {
     return (
         <div className={styles.content}>
             <ProfileInfo/>
-            <MyPosts postArray={props.postArray}/>
+            <MyPosts state={props.state}/>
         </div>
     )
 }
