@@ -10,10 +10,6 @@ export const DialogItem = (props: Props) => {
     const {userId, name} = props;
     const path = `/dialogs/${userId}`
 
-    return (
-        <div>
-            <NavLink to={path}>{name}</NavLink>
-        </div>
-    );
+    return  <div><NavLink to={path}>{name}</NavLink></div>
 };
 

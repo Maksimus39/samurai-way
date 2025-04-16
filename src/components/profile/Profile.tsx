@@ -1,12 +1,17 @@
 import styles from "./Profile.module.css"
 import {MyPosts} from "./myPosts/MyPosts";
 import {ProfileInfo} from "./profileInfo/ProfileInfo";
+import {PostType} from "../../index";
 
-export const Profile = () => {
+
+type Props = {
+    postArray: PostType[]
+}
+export const Profile = (props: Props) => {
     return (
         <div className={styles.content}>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts postArray={props.postArray}/>
         </div>
     )
 }
