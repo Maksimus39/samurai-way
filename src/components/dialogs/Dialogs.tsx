@@ -9,7 +9,6 @@ type DialogItemArrayType = {
     id: number
     name: string
 }
-
 type MessageArrayType = {
     id: number
     message: string
@@ -23,7 +22,6 @@ export const Dialogs = () => {
         {id: 3, name: "Andrey"},
         {id: 4, name: "Bogdan"}
     ]
-
     const messageArray: MessageArrayType[] = [
         {id: 1, message: "Сынок, всегда помни: упорство и честность приведут к успеху."},
         {id: 2, message: "Дорогая, верь в себя и никогда не бойся мечтать."},
@@ -31,25 +29,21 @@ export const Dialogs = () => {
         {id: 4, message: "Брат, помоги мне, пожалуйста, с домашним заданием по математике."}
     ]
 
+    const DialogElement = dialogItemArray.map((el) => {
+        return <div key={el.id}><DialogItem userId={el.id} name={el.name}/></div>
+    })
+    const MessageElement = messageArray.map((el) => {
+        return <div key={el.id}><Message message={el.message}/></div>
+    })
+
     return (
         <div className={styles.dialog}>
             <div className={styles.dialogsItems}>
-
-                <div className={styles.dialog}>
-
-                    {dialogItemArray.map((el) => {
-                        return <div key={el.id}><DialogItem userId={el.id} name={el.name}/></div>
-                    })}
-                </div>
+                <div className={styles.dialog}>{DialogElement}</div>
             </div>
 
             <div className={styles.messageItems}>
-                <div className={styles.messages}>
-
-                    {messageArray.map((el) => {
-                        return <div key={el.id}><Message message={el.message}/></div>
-                    })}
-                </div>
+                <div className={styles.messages}>{MessageElement}</div>
             </div>
         </div>
     );
