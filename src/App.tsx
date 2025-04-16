@@ -19,12 +19,12 @@ export const App = () => {
 
 
                 <div className={"App-Wrapper-content"}>
-                    <Route exact path="/profile" component={Profile}/>
-                    <Route exact path="/dialogs" component={Dialogs}/>
-                    <Route exact path="/messages" component={Messages}/>
-                    <Route exact path="/news" component={News}/>
-                    <Route exact path="/music" component={Music}/>
-                    <Route exact path="/settings" component={Settings}/>
+                    <Route path="/profile" component={Profile}/>
+                    <Route path="/dialogs" component={Dialogs}/>
+                    <Route path="/messages" component={Messages}/>
+                    <Route path="/news" component={News}/>
+                    <Route path="/music" component={Music}/>
+                    <Route path="/settings" component={Settings}/>
                 </div>
 
             </div>
