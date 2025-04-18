@@ -13,12 +13,23 @@ export const MyPosts = (props: Props) => {
         return <div key={el.id}><Post post={el.post} likes={el.likes}/></div>
     })
 
+    const newPostElement = React.createRef<HTMLInputElement>()
+
+    const adPostHandler = () => {
+        const text = newPostElement.current?.value
+        alert(text)
+    }
+
     return (
         <div>
             My post
             <div>
-                <input type="text" placeholder={"post"}/>
-                <button>Add post</button>
+                <input type="text"
+                       placeholder={"post"}
+                       ref={newPostElement}
+                />
+
+                <button onClick={adPostHandler}>Add post</button>
                 {PostElement}
             </div>
         </div>
