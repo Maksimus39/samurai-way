@@ -24,7 +24,7 @@ export const MyPosts = (props: Props) => {
         <div>
             My post
             <div>
-                <input type="text"
+                <input type={"text"}
                        placeholder={"post"}
                        ref={newPostElement}
                 />
